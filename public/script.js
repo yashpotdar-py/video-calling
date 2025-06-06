@@ -3,7 +3,8 @@
 // Frontend logic: lobby UI, WebRTC peer connection, signaling via Socket.IO
 // ------------------------------
 
-const socket = io(); // connects to the same host that served index.html
+const SIGNALING_SERVER_URL = "https://video-calling-alpha.vercel.app";
+const socket = io(SIGNALING_SERVER_URL);
 
 // DOM elements
 const lobbyDiv = document.getElementById("lobby");
