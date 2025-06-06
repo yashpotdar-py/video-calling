@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vanilla JS Video Chat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="lobby">
+      <h1>🌐 Simple Video Chat</h1>
+      <button id="createBtn">Create New Room</button>
+      <p>OR</p>
+      <input type="text" id="roomInput" placeholder="Enter Room ID to Join" />
+      <button id="joinBtn">Join Room</button>
+    </div>
+
+    <div id="videoChat" class="hidden">
+      <h2>Room: <span id="roomIdDisplay"></span></h2>
+      <div class="videos">
+        <div>
+          <p>You</p>
+          <video id="localVideo" autoplay playsinline muted></video>
+        </div>
+        <div>
+          <p>Peer</p>
+          <video id="remoteVideo" autoplay playsinline></video>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="toggleAudioBtn">Mute Audio</button>
+        <button id="toggleVideoBtn">Stop Video</button>
+        <button id="leaveBtn">Leave Room</button>
+        <p id="status">🔴 Not Connected</p>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
