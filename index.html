@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Vercel‐Hosted Video Chat</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div id="lobby">
+      <h1>🌐 Video Chat on Vercel</h1>
+      <button id="createBtn">Create New Room</button>
+      <p>OR</p>
+      <input
+        type="text"
+        id="roomInput"
+        placeholder="Enter Room ID to Join"
+        autocomplete="off"
+      />
+      <button id="joinBtn">Join Room</button>
+      <p style="font-size: 0.9rem; color: #555; margin-top: 8px">
+        Room IDs are 8‐character strings (e.g., <code>abc123xy</code>)
+      </p>
+    </div>
+
+    <div id="videoChat" class="hidden">
+      <h2>Room: <span id="roomIdDisplay"></span></h2>
+      <div class="videos">
+        <div>
+          <p>You</p>
+          <video id="localVideo" autoplay playsinline muted></video>
+        </div>
+        <div>
+          <p>Peer</p>
+          <video id="remoteVideo" autoplay playsinline></video>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="toggleAudioBtn">Mute Audio</button>
+        <button id="toggleVideoBtn">Stop Video</button>
+        <button id="leaveBtn">Leave Room</button>
+        <p id="status">🔴 Not Connected</p>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
